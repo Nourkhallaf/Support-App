@@ -1,0 +1,51 @@
+.partner-img {
+  width: 450px; 
+  height: 250px; 
+ 
+  object-fit: cover; 
+  margin-bottom: 20px; 
+}
+
+.partner-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.carousel {
+  max-width: 80%; 
+  margin: 0 auto; 
+}
+
+.carousel-item img {
+  max-height: 250px; 
+  object-fit: contain; 
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; 
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: gray; 
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.container {
+  padding: 20px;
+}

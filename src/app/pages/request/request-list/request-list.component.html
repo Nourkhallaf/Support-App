@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+  <h2 class="text-center title">Request List</h2>
+
+  <div class="d-flex justify-content-end mb-3 align-items-center">
+    <label for="sortBy" class="me-2">Sort by:</label>
+    <select id="sortBy" class="form-select form-select-sm list-select" (change)="onSortChange($event)">
+      <option value="">Select</option>
+      <option value="createdDate">Created Date</option>
+      <option value="status">Status</option>
+    </select>
+</div>
+
+  <div class="table-responsive list-table-container">
+    <table class="table table-hover list-table">
+      <thead class="list-table-header">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Created At</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of sortedRequests">
+          <td>{{ request.id }}</td>
+          <td>{{ request.name }}</td>
+          <td>
+            <span [ngClass]="{
+              'badge bg-success ': request.status === 'resolved',
+              'badge bg-warning ': request.status === 'submitted',
+              'badge bg-danger ': request.status === 'not-applicable'
+            }">{{ request.status }}</span>
+          </td>
+          <td>{{ request.createdDate | date }}</td>
+          <td>
+            <button class="btn detail-btn btn-sm" (click)="requestDetails(request.id)">
+              View Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

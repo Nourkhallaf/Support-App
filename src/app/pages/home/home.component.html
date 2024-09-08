@@ -1,0 +1,30 @@
+<app-header></app-header> 
+
+
+<div class="container mt-5">
+    <div class="general-search text-center">
+      <h4 class="mb-4">Find What You're Looking For</h4>
+      <div class="input-group mb-3">
+        <input #searchInput type="text" class="form-control" placeholder="Search here" aria-label="Search" aria-describedby="button-search">
+        <button class="btn btn-primary" type="button" id="button-search" (click)="onSearch(searchInput.value)">Search</button>
+      </div>
+  
+    <div *ngIf="searchResults.length > 0" class="mt-5">
+      <h5>Search Results:</h5>
+      <ul class="list-group">
+        <li *ngFor="let result of searchResults" class="list-group-item">{{ result }}</li>
+      </ul>
+    </div>
+    
+    <div *ngIf="searchResults.length === 0 && searchInput.value" class="mt-5">
+      <h5>No results found for "{{ searchInput.value }}"</h5>
+    </div>
+  </div>
+</div>
+
+  
+<app-hero></app-hero>
+
+<app-partners></app-partners>
+
+<app-contact></app-contact>

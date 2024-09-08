@@ -1,0 +1,13 @@
+<div class="container mt-5 text-center">
+  
+    <div class="mt-4">
+      <img [src]="errorImage" [alt]="errorMessage" class="" *ngIf="errorImage" />
+    </div>
+  
+    <div *ngIf="!errorImage">
+        <h2>{{ errorMessage }}</h2>
+    </div>
+  
+    <a [routerLink]="['/']" class="btn btn-primary mt-4">Back to Home</a>
+  </div>
+  

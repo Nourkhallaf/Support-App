@@ -1,0 +1,42 @@
+// .navbar-brand .logo {
+//     height: 40px; 
+//     width: auto;   
+//   }
+  
+
+
+/* Modernizing the Navbar */
+.navbar {
+  background: transparent; /* Transparent background */
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: #fff; /* Solid background on scroll */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  font-size: 16px;
+  color: #333;
+  padding: 8px 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.navbar-brand .logo {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  color: #007bff;
+}

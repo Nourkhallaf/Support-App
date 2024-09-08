@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card p-4">
+        <div class="text-center mb-4">
+          <img src="assets/solutions.png" alt="App Logo" class="login-logo img-fluid">
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input 
+              id="username" 
+              type="text" 
+              formControlName="username" 
+              class="form-control form-control-sm"  
+              [ngClass]="{'is-invalid': username?.invalid && (username?.dirty || username?.touched)}"
+            />
+            <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="invalid-feedback">
+              <div *ngIf="username?.errors?.['required']">Username is required.</div>
+              <div *ngIf="username?.errors?.['minlength']">Username must be at least 6 characters long.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input 
+              id="password" 
+              type="password" 
+              formControlName="password" 
+              class="form-control form-control-sm"  
+              [ngClass]="{'is-invalid': password?.invalid && (password?.dirty || password?.touched)}"
+            />
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="invalid-feedback">
+              <div *ngIf="password?.errors?.['required']">Password is required.</div>
+              <div *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters long.</div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary btn-sm" [disabled]="!loginForm.valid">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

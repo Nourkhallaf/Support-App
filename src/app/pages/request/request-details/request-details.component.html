@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+    <h2 class="text-center title">Request Details</h2>
+  
+    <div class="card card p-4 mx-auto">
+      <div class="details-section">
+        <p><strong>User Id:</strong> {{ requestDetails.id }}</p>
+        <p><strong>User name:</strong> {{ requestDetails.name }}</p>
+        <p><strong>E-mail:</strong> {{ requestDetails.email }}</p>
+        <p><strong>Status:</strong> {{ requestDetails.status }}</p>
+        <p><strong>Content:</strong> {{ requestDetails.content }}</p>
+      </div>
+  
+      <div class="text-center mt-4">
+        <button class="btn custmom-btn me-2 btn-resolved" (click)="markAsResolved()">Mark as Resolved</button>
+        <button class="btn custmom-btn me-2 btn-not-applicable" (click)="markAsNotApplicable()">Mark as Not Applicable</button>
+        <a [routerLink]="['/requests']" class="btn custmom-btn btn-back">Back to List</a>
+      </div>
+    </div>
+  </div>
+  
