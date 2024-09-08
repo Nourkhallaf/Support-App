@@ -1,6 +1,6 @@
 # Support Application
 
-![Support App](assets/solutions.png)
+![Support App](src/assets/solutions.png)
 
 ## Project Overview
 
